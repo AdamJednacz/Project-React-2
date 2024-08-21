@@ -1,0 +1,13 @@
+@import "scss/styles/all";
+@import "scss/settings/all";
+@font-face {
+  font-family: 'CustomFont';
+  src:local('CustomFont');
+  src: url('./scss/fonts/tokyodrifterhalf.woff');
+  src: url('./scss/fonts/tokyodrifterhalf.ttf');
+
+}
+
+body{
+  background-color: #404040;
+}
