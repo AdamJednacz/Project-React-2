@@ -1,23 +1,245 @@
-header{
+
+
+
+@function circumference($r){
+  $pi: 3.141592653;
+  @return 2*$pi*$r;
+}
+header {
+  background-color: #222222;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0;
-  .container{
-    flex-direction: column;
-    .title{
-      font-family: 'CustomFont', sans-serif;
-      font-size: 2rem;
-      color: transparent;
-      background-image: linear-gradient(0deg, rgba(253,64,64,1) 50%, rgba(68,64,253,1) 100%);
-      background-clip: text;
+  padding: 1.5rem 0;
+  @include desktop {
+
+    padding: 1rem 0;
+  }
+
+  .container {
+    align-items: center;
+    justify-content: space-between;
+    @include desktop{
+      justify-content: center;
     }
-    //.menu_item{
-    //  font-size: 2rem;
-    //  color: #ffffff;
-    //  font-family: "Karantina", system-ui;
-    //  font-weight: 400;
-    //  font-style: normal;
-    //}
+    .title, .title_phone {
+     width: 70%;
+      cursor: pointer;
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    .title_phone {
+      display: none;
+      @include desktop {
+        position: unset;
+        font-size:96px ;
+        display: block;
+        margin: 0 2rem;
+      }
+    }
   }
 }
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0;
+  @include desktop{
+    height: auto;
+  }
+
+  &__toggle {
+    display: inline-block;
+
+    z-index: 10;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    outline: 0;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color .15s linear;
+    @include desktop{
+      display: none;
+    }
+
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+    visibility: hidden;
+    @include desktop{
+      position: unset;
+      flex-direction: row;
+    visibility: unset;
+    }
+  }
+
+
+  &__item {
+    opacity: 0;
+    transition: all .3s cubic-bezier(0.000, 0.995, 0.990, 1.000) .3s;
+    font-family: "Karantina", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    color: white;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 1rem;
+    @include desktop{
+      opacity: 1;
+      margin: 0 3rem;
+      padding: 0;
+      &:nth-of-type(1),&:nth-of-type(4){
+        font-size: 48px;
+      }
+      &:nth-of-type(2),&:nth-of-type(3){
+        font-size: 64px;
+      }
+    }
+    &:hover{
+      color: #FD4040;
+    }
+  }
+
+  @for $i from 1 through 5 {
+    &__item:nth-child(#{$i}) {
+      transform: translateY(-40px * $i);
+      @include desktop{
+        transform: none;
+      }
+    }
+  }
+
+
+}
+.menuicon {
+  display:block;
+  cursor:pointer;
+  color: white;
+
+  transform:rotate(0deg);
+  transition: .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+  &__bar,
+  &__circle {
+    fill:none;
+    stroke: currentColor;
+    stroke-width:3;
+    stroke-linecap:round;
+  }
+  &__bar {
+    transform: rotate(0deg);
+    transform-origin:50% 50%;
+    transition: transform .25s ease-in-out;
+  }
+  &__circle {
+    transition: stroke-dashoffset .3s linear .1s;
+    stroke-dashoffset:circumference(23); // 23 is the <circle>'s radius
+    stroke-dasharray:circumference(23);
+  }
+}
+
+
+.splash {
+  position:absolute;
+  top:40px;
+  right:40px;
+  width: 1px;
+  height: 1px;
+  @include desktop{
+    display: none;
+  }
+  &::after {
+    content:"";
+    display:block;
+    position:absolute;
+    border-radius:50%;
+    background-color:rgba(0,0,0,0.5) ;
+
+    width:284vmax;
+    height:284vmax;
+    top:-142vmax;
+    left:-142vmax;
+
+    transform: scale(0);
+    transform-origin:50% 50%;
+    transition: transform .5s cubic-bezier(0.755, 0.050, 0.855, 0.060);
+
+    will-change:transform;
+  }
+}
+
+
+
+
+.nav:target,
+.nav--open {
+
+
+  > .splash::after {
+    transform:scale(1);
+  }
+
+  .menuicon {
+    color:white;
+    transform:rotate(180deg);
+
+    &__circle {
+      stroke-dashoffset:0;
+    }
+    &__bar:nth-child(1),
+    &__bar:nth-child(4) {
+      opacity:0;
+    }
+    &__bar:nth-child(2) {
+      transform: rotate(45deg);
+    }
+    &__bar:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+
+
+  .nav {
+    &__menu {
+      visibility:visible;
+    }
+
+    &__item {
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+}
+
+
+
+
+.header {
+
+
+}
+
+
+
