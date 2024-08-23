@@ -1,0 +1,113 @@
+.rental {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    justify-content: center;
+    flex-direction: column;
+
+    .slider {
+      display: flex;
+
+      img {
+
+      }
+
+      .slide {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #ffffff;
+
+      }
+    }
+
+    .text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      h1 {
+
+      }
+
+      .specification {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .specification_item {
+          img {
+
+          }
+
+          p {
+
+          }
+        }
+      }
+    }
+
+    .availability {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h2 {
+
+      }
+
+      .availability_slider {
+        display: flex;
+
+        .cart {
+
+        }
+
+        .availability_slide {
+
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      p {
+
+      }
+
+      .result {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .result_box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .result_box_amount {
+
+          }
+
+          img {
+
+          }
+        }
+      }
+    }
+
+    .car {
+
+    }
+  }
+}
