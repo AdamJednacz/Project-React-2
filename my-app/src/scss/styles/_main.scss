@@ -1,13 +1,8 @@
 main{
-
-  height: 90.9vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  @include desktop{
-    height: 88vh;
-  }
     .container {
       position: absolute;
       top: 30%;
