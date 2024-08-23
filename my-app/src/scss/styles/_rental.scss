@@ -8,61 +8,67 @@
   font-weight: 400;
   font-style: normal;
 
-
-
   .container {
-    justify-content: center;
+    display: flex;
     flex-direction: column;
     max-width: 90%;
     z-index: 1;
+
     .slider {
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       width: 100%;
-
       margin: 0 auto;
-
+      @include desktop{
+        justify-content: space-evenly;
+        margin: 2rem 0;
+      }
       img {
         cursor: pointer;
-
       }
 
       .slides {
         display: flex;
-        overflow: hidden;
-
-
-      }
-
-      .slide {
-
-
-        border-radius: 50%; // Make the slide circular
-        overflow: hidden;
-        width: 60px;
-        height:60px;
-
-        display: flex;
-        align-items: center;
         justify-content: center;
-        background-color: #ffffff;
-        color: #000000;
+        position: relative;
+        width: 70%;
         @include desktop{
-          height: 80px;
-          width: 80px;
+          width: auto;
         }
-        img {
-          width: 100%;
-          height: auto;
-          border-radius: 50%; // Make the image circular as well
+        .slide {
+
+          border-radius: 50%;
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #ffffff;
+          color: #000000;
+          opacity: 0.5;
+          transition: opacity 0.3s;
+          margin: 0 1rem;
+          &.active {
+            opacity: 1;
+          }
+
+          @include desktop {
+
+            width: 100px;
+            height: 100px;
+            margin: 0 4rem;
+          }
+
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+          }
         }
       }
-    }
-
-    @include desktop {
-
     }
 
     .text {
@@ -71,6 +77,7 @@
       justify-content: center;
       flex-direction: column;
       color: #FD4040;
+
       h1 {
         margin: 1rem 0;
         font-family: "Karantina", system-ui;
@@ -84,8 +91,8 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-
         flex-wrap: wrap;
+
         .specification_item {
           display: flex;
           align-items: center;
@@ -123,10 +130,16 @@
         justify-content: space-between;
         margin-bottom: 0.5rem;
         min-width: 200px;
+
         img {
           cursor: pointer;
           width: 50px;
           height: 50px;
+
+          @include desktop{
+            width: 30px;
+            height: 30px;
+          }
         }
 
         .availability_slide {
@@ -138,6 +151,7 @@
 
           p {
             font-size: 24px;
+
             @include desktop {
               font-size: 32px;
             }
@@ -152,18 +166,28 @@
         justify-content: center;
         margin-bottom: 1rem;
 
-        input {
-          text-align: center;
-          width: 200px;
-          height: 40px;
-          margin: 0.5rem;
-          padding: 5px;
-          border-radius: 5px;
-          border: none;
-          outline: none;
+        .input_container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row-reverse;
+          img{
+
+          }
+          input {
+            background-color: #D9D9D9;
+            text-align: center;
+            color: rgba(64,64,64,0.4);
+            width: 200px;
+            height: 40px;
+            margin: 0.5rem;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+          }
         }
       }
-
       .result {
         display: flex;
         align-items: center;
@@ -173,7 +197,8 @@
         p {
           margin-bottom: 10px;
           font-size: 24px;
-          @include desktop{
+
+          @include desktop {
             font-size: 36px;
           }
         }
@@ -193,7 +218,8 @@
           }
         }
       }
-      a{
+
+      a {
         text-decoration: underline;
         margin-top: 1rem;
       }
@@ -203,7 +229,19 @@
       margin-top: 2rem;
       width: 100%;
       max-width: 400px;
+      @include desktop{
+        max-width: 600px;
+      }
+    }
+  }
 
+  @include desktop {
+    .slider .slides {
+      max-width: 100%;
+    }
+
+    .slide {
+      width: calc(100% / 5);
     }
   }
 }
