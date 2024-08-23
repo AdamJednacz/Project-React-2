@@ -1,4 +1,5 @@
 import React, {lazy} from 'react';
+
 const Header = lazy(() => import("./Header"));
 const Footer = lazy(() => import("./Footer"));
 const Main = lazy(() => import("./Main"));
@@ -10,14 +11,16 @@ const Garage = lazy(() => import("./Garage"));
 const Layout = () => {
     return (
         <>
-         <Header/>
-         <Main/>
-         <Rental/>
-         <AboutUs/>
-         <Opinions/>
-         <Form/>
-         <Garage/>
-         <Footer/>
+            <div className="bg">
+                <Header/>
+                <Main/>
+            </div>
+            <Rental/>
+            <AboutUs/>
+            <Opinions/>
+            <Form/>
+            <Garage/>
+            <Footer/>
         </>
     );
 };

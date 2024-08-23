@@ -17,3 +17,13 @@
   justify-content: space-between;
   width: 100%;
 }
+.bg {
+  background-image: url("../../assets/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 80%;
+
+  @include desktop {
+    background-size: cover;
+  }
+}

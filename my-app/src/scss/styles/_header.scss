@@ -6,16 +6,17 @@
   @return 2*$pi*$r;
 }
 header {
-  background-color: #222222;
+  background-color: rgba(0,0,0,0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   @include desktop {
-
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
-
   .container {
     align-items: center;
     justify-content: space-between;
@@ -23,17 +24,16 @@ header {
       justify-content: center;
     }
     .title, .title_phone {
-     width: 70%;
+     width: 200px;
       cursor: pointer;
-
       @include desktop {
         display: none;
       }
     }
-
     .title_phone {
       display: none;
       @include desktop {
+        width: 400px;
         position: unset;
         font-size:96px ;
         display: block;
@@ -83,10 +83,12 @@ header {
     bottom: 0;
     z-index: 5;
     visibility: hidden;
+    height: 100vh;
     @include desktop{
       position: unset;
       flex-direction: row;
     visibility: unset;
+      height: auto;
     }
   }
 
@@ -175,7 +177,7 @@ header {
     display:block;
     position:absolute;
     border-radius:50%;
-    background-color:rgba(0,0,0,0.5) ;
+    background-color:rgba(0,0,0,0.9) ;
 
     width:284vmax;
     height:284vmax;
@@ -232,14 +234,4 @@ header {
     }
   }
 }
-
-
-
-
-.header {
-
-
-}
-
-
 
