@@ -15,7 +15,9 @@ const Layout = () => {
                 <Header/>
                 <Main/>
             </div>
+            <div className="bg_rental">
             <Rental/>
+            </div>
             <AboutUs/>
             <Opinions/>
             <Form/>

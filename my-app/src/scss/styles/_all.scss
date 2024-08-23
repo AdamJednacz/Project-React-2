@@ -18,6 +18,9 @@
   width: 100%;
 }
 .bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url("../../assets/bg1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,5 +28,33 @@
   height: 100vh;
   @include desktop {
     background-size: cover;
+  }
+}
+
+
+.bg_rental {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/garage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 80%;
+  height: 100vh;
+  position: relative;
+  @include desktop {
+    background-size: cover;
+    align-items: flex-end;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for darkness */
+    z-index: 1; /* Ensure the overlay is above the background but below content */
   }
 }

@@ -2,25 +2,67 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  color: #ffffff;
+  font-family: "Kulim Park", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+
 
   .container {
     justify-content: center;
     flex-direction: column;
-
+    max-width: 90%;
+    z-index: 1;
     .slider {
       display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+
+      margin: 0 auto;
 
       img {
+        cursor: pointer;
+
+      }
+
+      .slides {
+        display: flex;
+        overflow: hidden;
+
 
       }
 
       .slide {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: #ffffff;
 
+
+        border-radius: 50%; // Make the slide circular
+        overflow: hidden;
+        width: 60px;
+        height:60px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        color: #000000;
+        @include desktop{
+          height: 80px;
+          width: 80px;
+        }
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 50%; // Make the image circular as well
+        }
       }
+    }
+
+    @include desktop {
+
     }
 
     .text {
@@ -28,23 +70,37 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-
+      color: #FD4040;
       h1 {
-
+        margin: 1rem 0;
+        font-family: "Karantina", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 64px;
       }
 
       .specification {
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 100%;
 
+        flex-wrap: wrap;
         .specification_item {
-          img {
+          display: flex;
+          align-items: center;
+          margin: 0.5rem;
 
+          img {
+            margin-right: 10px;
           }
 
           p {
+            margin: 0;
 
+            @include desktop {
+              font-size: 20px;
+            }
           }
         }
       }
@@ -55,33 +111,57 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin-top: 1rem;
 
       h2 {
-
+        margin-bottom: 20px;
       }
 
       .availability_slider {
         display: flex;
-
-        .cart {
-
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        min-width: 200px;
+        img {
+          cursor: pointer;
+          width: 50px;
+          height: 50px;
         }
 
         .availability_slide {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffffff;
+          margin: 0 10px;
 
+          p {
+            font-size: 24px;
+            @include desktop {
+              font-size: 32px;
+            }
+          }
         }
       }
 
       form {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        margin-bottom: 1rem;
 
-      }
-
-      p {
-
+        input {
+          text-align: center;
+          width: 200px;
+          height: 40px;
+          margin: 0.5rem;
+          padding: 5px;
+          border-radius: 5px;
+          border: none;
+          outline: none;
+        }
       }
 
       .result {
@@ -90,23 +170,39 @@
         justify-content: center;
         flex-direction: column;
 
+        p {
+          margin-bottom: 10px;
+          font-size: 24px;
+          @include desktop{
+            font-size: 36px;
+          }
+        }
+
         .result_box {
           display: flex;
           align-items: center;
           justify-content: center;
 
           .result_box_amount {
-
+            margin-left: 10px;
           }
 
           img {
-
+            width: 30px;
+            height: 30px;
           }
         }
+      }
+      a{
+        text-decoration: underline;
+        margin-top: 1rem;
       }
     }
 
     .car {
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 400px;
 
     }
   }
