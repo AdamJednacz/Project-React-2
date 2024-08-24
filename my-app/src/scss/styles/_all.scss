@@ -44,7 +44,9 @@
 .bg_rental{
   background-image: url("../../assets/garage.png");
   position: relative;
+  padding: 2rem 0;
   &::before {
+
     content: "";
     position: absolute;
     width: 100%;
