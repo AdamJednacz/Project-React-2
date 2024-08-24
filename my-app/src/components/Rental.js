@@ -85,9 +85,7 @@ const Rental = () => {
                 </div>
                 <img className="car" src={car} alt="car"/>
             </div>
-            {/*<div className="arrow_bg">*/}
-            {/*    <img src={arrow} alt="arrow"/>*/}
-            {/*</div>*/}
+
         </section>
     );
 };

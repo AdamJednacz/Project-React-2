@@ -15,23 +15,7 @@
     max-width: 90%;
     z-index: 1;
 
-    .slider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      width: 100%;
-      margin: 0 auto;
-      @include desktop{
-        justify-content: space-evenly;
-        margin: 2rem 0;
-      }
-      img {
-        cursor: pointer;
-      }
 
-
-    }
 
     .text {
       display: flex;
@@ -207,24 +191,7 @@
       }
     }
   }
-  //.arrow_bg{
-  //  position: absolute;
-  //  bottom: -20px;
-  //  display: flex;
-  //  align-items: center;
-  //  justify-content: center;
-  //  height: 20svh;
-  //  width: 100%;
-  //  background: rgb(0,0,0);
-  //  background: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.2) 100%);
-  //
-  //  img{
-  //    z-index: 1;
-  //  }
-  //  @include desktop{
-  //    display: none;
-  //  }
-  //}
+ 
   @include desktop {
     .slider .slides {
       max-width: 100%;

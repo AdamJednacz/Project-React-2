@@ -1,12 +1,14 @@
 .slider {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 100%;
   max-width: 1200px;
 
   position: relative;
-
+  @include desktop{
+    display: flex;
+  }
   .arrow {
     width: 48px;
     height: 48px;

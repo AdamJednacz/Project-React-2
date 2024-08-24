@@ -39,9 +39,8 @@
   background-image: url("../../assets/bg_opinions.png");
   position: relative;
   background-position: top;
-  @include desktop {
-    background-size:cover;
-  }
+
+
 
 }
 .bg_rental{
