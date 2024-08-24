@@ -9,6 +9,7 @@ import cart from "../assets/cart.png";
 import car from "../assets/3d_car_1.png";
 import calendar from "../assets/calendar.png";
 import Slider from "./Slider";
+import arrow from "../assets/arrow.png";
 
 
 
@@ -84,7 +85,9 @@ const Rental = () => {
                 </div>
                 <img className="car" src={car} alt="car"/>
             </div>
-
+            {/*<div className="arrow_bg">*/}
+            {/*    <img src={arrow} alt="arrow"/>*/}
+            {/*</div>*/}
         </section>
     );
 };

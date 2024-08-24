@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   color: #ffffff;
   font-family: "Kulim Park", sans-serif;
@@ -160,7 +161,7 @@
 
         p {
           margin-bottom: 10px;
-          font-size: 24px;
+          font-size: 16px;
 
           @include desktop {
             font-size: 36px;
@@ -200,13 +201,30 @@
     .car {
       margin: 2rem 0;
       width: 100%;
-      max-width: 400px;
+      max-width: 300px;
       @include desktop{
         max-width: 600px;
       }
     }
   }
-
+  //.arrow_bg{
+  //  position: absolute;
+  //  bottom: -20px;
+  //  display: flex;
+  //  align-items: center;
+  //  justify-content: center;
+  //  height: 20svh;
+  //  width: 100%;
+  //  background: rgb(0,0,0);
+  //  background: linear-gradient(0deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.2) 100%);
+  //
+  //  img{
+  //    z-index: 1;
+  //  }
+  //  @include desktop{
+  //    display: none;
+  //  }
+  //}
   @include desktop {
     .slider .slides {
       max-width: 100%;
