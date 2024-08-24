@@ -18,7 +18,7 @@
   justify-content: space-between;
   width: 100%;
 }
-.bg_rental,.bg_opinions {
+.bg_rental,.bg_opinions,.bg_form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,5 +75,9 @@ video{
   @include desktop{
     align-items: flex-end;
   }
+
+}
+
+.bg_form{
 
 }

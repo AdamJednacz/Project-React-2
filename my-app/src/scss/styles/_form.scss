@@ -1,0 +1,117 @@
+.form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container{
+    justify-content: center;
+
+    width: 100%;
+    max-width: 100%;
+    .form_container{
+      font-family: "Karantina", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 33px;
+      padding:24px 36px 24px;
+      color: #ffffff;
+      letter-spacing: 3px;
+      @include desktop{
+        padding: 36px 128px 36px;
+        width: 100%;
+      }
+      span{
+        color: #FD4040;
+      }
+      h1{
+        text-align: center;
+        font-size: 48px;
+        white-space: nowrap;
+
+        @include desktop{
+          font-size: 64px;
+        }
+      }
+      p{
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 16px;
+          @include desktop{
+            font-size: 40px;
+          }
+      }
+      form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        @include desktop{
+          font-size: 24px;
+        }
+
+
+        input,textarea,button{
+          border: none;
+          font-family: Inter,sans-serif;
+          background-color: #D9D9D9;
+          border-radius: 8px;
+          color: rgba(34,34,34,0.4);
+        }
+        input::placeholder,textarea::placeholder{
+          color: rgba(34,34,34,0.4);
+        }
+        input{
+
+          width: 80%;
+
+          padding: 8px 20px 8px 16px;
+          margin: 4px 0;
+          @include desktop{
+            width: 100%;
+            padding-left: 24px;
+          }
+        }
+        textarea{
+          padding: 8px 20px 8px 16px;
+          width: 80%;
+          margin: 4px 0 32px 0;
+          @include desktop{
+            width: 100%;
+            padding-left: 24px;
+          }
+        }
+        button{
+          padding: 8px 32px;
+          margin-bottom: 24px;
+          @include desktop{
+
+            padding: 8px 48px;
+          }
+        }
+      }
+      p{
+        text-align: center;
+        font-size: 30px;
+        @include desktop{
+          font-size: 40px;
+        }
+      }
+      .icons_container{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        img{
+          width: 30px;
+          height: 30px;
+          @include desktop{
+            width: 48px;
+            height: 48px;
+          }
+        }
+      }
+
+    }
+  }
+}

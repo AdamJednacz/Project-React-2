@@ -25,7 +25,9 @@ const Layout = () => {
             <Opinions/>
             </div>
             <AboutUs/>
+            <div className="bg_form">
             <Form/>
+            </div>
             <Garage/>
             <Footer/>
         </>
