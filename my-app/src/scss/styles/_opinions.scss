@@ -113,3 +113,16 @@
     }
   }
 }
+
+
+.opinion {
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transition-delay: 0s; /* This will be overridden by inline styles */
+}
+
+.opinion.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}

@@ -1,4 +1,5 @@
 import React, {lazy} from 'react';
+import video_desktop from "../assets/bg-animated1.mp4"
 
 const Header = lazy(() => import("./Header"));
 const Footer = lazy(() => import("./Footer"));
@@ -12,6 +13,8 @@ const Layout = () => {
     return (
         <>
             <div className="bg">
+                <video className="video_desktop" src={video_desktop} autoPlay loop muted/>
+
                 <Header/>
                 <Main/>
             </div>
