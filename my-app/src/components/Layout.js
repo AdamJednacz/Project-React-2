@@ -18,8 +18,10 @@ const Layout = () => {
             <div className="bg_rental">
             <Rental/>
             </div>
-            <AboutUs/>
+            <div className="bg_opinions">
             <Opinions/>
+            </div>
+            <AboutUs/>
             <Form/>
             <Garage/>
             <Footer/>

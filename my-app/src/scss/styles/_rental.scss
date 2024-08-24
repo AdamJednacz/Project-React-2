@@ -29,46 +29,7 @@
         cursor: pointer;
       }
 
-      .slides {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        width: 70%;
-        @include desktop{
-          width: auto;
-        }
-        .slide {
 
-          border-radius: 50%;
-          overflow: hidden;
-          width: 60px;
-          height: 60px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: #ffffff;
-          color: #000000;
-          opacity: 0.5;
-          transition: opacity 0.3s;
-          margin: 0 1rem;
-          &.active {
-            opacity: 1;
-          }
-
-          @include desktop {
-
-            width: 100px;
-            height: 100px;
-            margin: 0 4rem;
-          }
-
-          img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-          }
-        }
-      }
     }
 
     .text {
@@ -83,7 +44,10 @@
         font-family: "Karantina", system-ui;
         font-weight: 400;
         font-style: normal;
-        font-size: 64px;
+        font-size: 48px;
+        @include desktop {
+          font-size: 64px;
+        }
       }
 
       .specification {
@@ -179,7 +143,7 @@
             text-align: center;
             color: rgba(64,64,64,0.4);
             width: 200px;
-            height: 40px;
+            height: 30px;
             margin: 0.5rem;
             padding: 5px;
             border-radius: 5px;
@@ -207,8 +171,16 @@
           display: flex;
           align-items: center;
           justify-content: center;
-
+          margin: 1rem;
           .result_box_amount {
+            color: rgba(64,64,64,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #D9D9D9;
+            width: 110px;
+            height: 42px;
+            border-radius:8px ;
             margin-left: 10px;
           }
 
@@ -226,7 +198,7 @@
     }
 
     .car {
-      margin-top: 2rem;
+      margin: 2rem 0;
       width: 100%;
       max-width: 400px;
       @include desktop{

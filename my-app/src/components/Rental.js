@@ -8,14 +8,9 @@ import right from "../assets/right_arrow.png";
 import cart from "../assets/cart.png";
 import car from "../assets/3d_car_1.png";
 import calendar from "../assets/calendar.png";
+import Slider from "./Slider";
 
-const slides = [
-    {id: 1, content: <p>1</p>},
-    {id: 2, content: <p>2</p>},
-    {id: 3, content: <p>3</p>},
-    {id: 4, content: <p>4</p>},
-    {id: 5, content: <p>5</p>}
-];
+
 
 const availabilitySlides = [
     {id: 1, content: <p>Days</p>},
@@ -23,17 +18,7 @@ const availabilitySlides = [
 ];
 
 const Rental = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
     const [currentAvailabilitySlide, setCurrentAvailabilitySlide] = useState(0);
-    const slideCount = slides.length;
-
-    const goToPrevious = () => {
-        setCurrentSlide((prevSlide) => (prevSlide === 0 ? slideCount - 1 : prevSlide - 1));
-    };
-
-    const goToNext = () => {
-        setCurrentSlide((prevSlide) => (prevSlide === slideCount - 1 ? 0 : prevSlide + 1));
-    };
 
     const goToPreviousAvailability = () => {
         setCurrentAvailabilitySlide((prevSlide) => (prevSlide === 0 ? availabilitySlides.length - 1 : prevSlide - 1));
@@ -46,20 +31,7 @@ const Rental = () => {
     return (
         <section className="rental">
             <div className="container">
-                <div className="slider">
-                    <img src={left} alt="left arrow" onClick={goToPrevious}/>
-                    <div className="slides">
-                        {slides.map((slide, index) => (
-                            <div
-                                className={`slide ${index === currentSlide ? 'active' : ''}`}
-                                key={slide.id}
-                            >
-                                {slide.content}
-                            </div>
-                        ))}
-                    </div>
-                    <img src={right} alt="right arrow" onClick={goToNext}/>
-                </div>
+                <Slider/>
                 <div className="text">
                     <h1>Car Name*</h1>
                     <div className="specification">
@@ -105,13 +77,14 @@ const Rental = () => {
                         <p>360 PLN / for a day</p>
                         <div className="result_box">
                             <img className="cart" src={cart} alt="cart"/>
-                            <div className="result_box_amount">pole</div>
+                            <div className="result_box_amount">Total</div>
                         </div>
                     </div>
                     <a>*Here you can check full specification</a>
                 </div>
                 <img className="car" src={car} alt="car"/>
             </div>
+
         </section>
     );
 };
