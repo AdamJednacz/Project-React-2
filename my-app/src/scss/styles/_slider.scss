@@ -1,14 +1,15 @@
 .slider {
-  display: none;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   max-width: 1200px;
-
+  position: absolute;
+  top: 20px;
+@include desktop{
   position: relative;
-  @include desktop{
-    display: flex;
-  }
+  justify-content: center;
+}
   .arrow {
     width: 48px;
     height: 48px;
@@ -18,10 +19,13 @@
 }
 
 .slides {
+  display: none;
   overflow: hidden;
   width: 100%;
   position: relative;
-
+  @include desktop{
+    display: block;
+  }
   .slides-inner {
     display: flex;
     justify-content: center;

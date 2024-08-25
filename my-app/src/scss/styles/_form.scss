@@ -102,12 +102,10 @@
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
-        img{
-          width: 30px;
-          height: 30px;
+        .icon{
+
           @include desktop{
-            width: 48px;
-            height: 48px;
+            font-size: 2rem;
           }
         }
       }

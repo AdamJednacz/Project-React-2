@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import left from "../assets/left_arrow.png";
 import right from "../assets/right_arrow.png";
 import car_3d_model_1 from "../assets/car_3d_model_1.avif"
@@ -10,7 +10,8 @@ import car_3d_model_5 from "../assets/car_3d_model_5.jpg"
 
 
 
-const Slider = () => {
+const Slider = ({ onSlideChange }) => {
+
     const slides = [
         { id: 1, content: <img className="img" src={car_3d_model_1} alt="3d_model"/> },
         { id: 2, content: <img className="img" src={car_3d_model_2} alt="3d_model"/> },
@@ -23,6 +24,9 @@ const Slider = () => {
 
     const [currentSlide, setCurrentSlide] = useState(2); // Start from the third slide
 
+    useEffect(() => {
+        onSlideChange(slides[currentSlide].id);
+    }, [currentSlide]);
     const goToPrevious = () => {
         setCurrentSlide((prevSlide) => (prevSlide === 0 ? slides.length - 1 : prevSlide - 1));
     };

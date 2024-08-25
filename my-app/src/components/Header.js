@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import japan_nd from "../assets/japan_nd.png"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-scroll'; // Import Link from react-scroll
+import japan_nd from "../assets/japan_nd.png";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrollDirection, setScrollDirection] = useState(null);
-    const location = useLocation();
-    const navigate = useNavigate();
 
     const handleOpenMenu = () => {
         setIsOpen(!isOpen);
@@ -40,11 +36,51 @@ const Header = () => {
                 <img src={japan_nd} alt="japan_nd" className="title" />
                 <nav id="nav" className={`nav ${isOpen ? 'nav--open' : ''}`} role="navigation">
                     <ul className="nav__menu" id="menu" tabIndex="-1" aria-label="main navigation" hidden={!isOpen}>
-                        <li className="nav__item">About</li>
-                        <li className="nav__item">Rental</li>
+                        <li className="nav__item">
+                            <Link
+                                to="rental"
+                                smooth={true}
+                                duration={500}
+                                offset={-50} // Adjust this offset value based on your header height
+                                onClick={() => setIsOpen(false)} // Close the menu after clicking
+                            >
+                                Rental
+                            </Link>
+                        </li>
+                        <li className="nav__item">
+                            <Link
+                                to="about"
+                                smooth={true}
+                                duration={500}
+                                offset={-50}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                About
+                            </Link>
+                        </li>
                         <img src={japan_nd} alt="japan_nd" className="title_phone" />
-                        <li className="nav__item">Garage</li>
-                        <li className="nav__item">Contact</li>
+                        <li className="nav__item">
+                            <Link
+                                to="opinions"
+                                smooth={true}
+                                duration={500}
+                                offset={-50}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Opinions
+                            </Link>
+                        </li>
+                        <li className="nav__item">
+                            <Link
+                                to="contact"
+                                smooth={true}
+                                duration={500}
+                                offset={-50}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Contact
+                            </Link>
+                        </li>
                     </ul>
 
                     <a onClick={handleOpenMenu} className="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">

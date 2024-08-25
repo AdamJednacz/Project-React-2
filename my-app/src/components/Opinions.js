@@ -32,7 +32,7 @@ const Opinions = () => {
     }, []);
 
     return (
-        <section className="opinions">
+        <section id="opinions" className="opinions">
             <div className="container">
                 <h1>What people and clients
                     <span> think</span> about us.</h1>

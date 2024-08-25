@@ -1,27 +1,25 @@
 import React from 'react';
-import facebook   from "../assets/facebook.png"
-import twiter from "../assets/twiter.png"
-import instagram from "../assets/instagram.png"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Form = () => {
     return (
-        <section className="form">
+        <section id="contact" className="form">
             <div className="container">
                 <div className="form_container">
                     <h1>Any<span> questions</span>?</h1>
-                    <p>Get in touch we us!</p>
+                    <p>Get in touch with us!</p>
                     <form>
-                        <input type="text" placeholder="Name"/>
-                        <input type="email" placeholder="E-mail"/>
-                        <textarea placeholder="Message" rows={7}/>
+                        <input required={true} type="text" placeholder="Name" />
+                        <input required={true} type="email" placeholder="E-mail" />
+                        <textarea required={true} placeholder="Message" rows={7} />
                         <button type="submit">Send</button>
                     </form>
                     <p>Here are our <span>socials</span>!</p>
                     <div className="icons_container">
-                        <img src={facebook} alt="facebook"/>
-                        <img src={twiter} alt="twiter"/>
-                        <img src={instagram} alt="instagram"/>
+                        <FontAwesomeIcon className="icon" icon={faFacebook} size="2x" />
+                        <FontAwesomeIcon className="icon" icon={faTwitter} size="2x" />
+                        <FontAwesomeIcon className="icon" icon={faInstagram} size="2x" />
                     </div>
                 </div>
             </div>
